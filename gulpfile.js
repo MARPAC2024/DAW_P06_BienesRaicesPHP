@@ -80,3 +80,18 @@ export function dev() {
 }
 
 export default series( js, css, imagenes, dev )
+
+
+
+function css(done) {
+    src('src/scss/**/*.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({ 
+            outputStyle: 'compressed',
+            silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin', 'color-functions']
+        }).on('error', sass.logError))
+        .pipe(postcss([autoprefixer()]))
+        .pipe(sourcemaps.write('.'))
+        .pipe(dest('public/build/css'));
+    done();
+}
