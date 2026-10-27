@@ -2,7 +2,7 @@
 
 Aplicación web para gestión y publicación de bienes raíces desarrollada bajo el patrón de arquitectura **Modelo-Vista-Controlador (MVC)**, utilizando PHP 8+, MySQL, Programación Orientada a Objetos (POO) con Active Record, SASS compilado con Gulp y autenticación de usuarios.
 
-- ---## 👥 MArtha Alvarez
+- ---## 👥 Martha Alvarez ... @MARPAC
 
 ---## 🛠️ Tecnologías Utilizadas* ## 🛠️ Tecnologías Utilizadas
 * **Backend:** PHP 8+, MySQL / MariaDB (MySQLi orientado a objetos).
@@ -22,4 +22,11 @@ cd DAW_P06_BienesRaicesPHP
 ## Dependencias de Node.js (Gulp y SASS)
 npm install
 npx gulp
+
+## Generar   .gitignore
+
+## Ejecutar:
+git add .gitignore
+git commit -m "chore: agregar archivo gitignore"
+git push origin main
 

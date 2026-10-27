@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "gulp"
   },
-  "author": "Juan De la torre @codigoconjuan",
+  "author": "Martha Alvarez @marpac",
   "license": "ISC",
   "devDependencies": {
     "gulp-concat": "^2.6.1",
