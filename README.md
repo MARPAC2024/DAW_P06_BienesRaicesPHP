@@ -25,8 +25,33 @@ npx gulp
 
 ## Generar   .gitignore
 
-## Ejecutar:
+## Configurar    .gitignore
+
+##   Ejecutar:
 git add .gitignore
 git commit -m "chore: agregar archivo gitignore"
 git push origin main
 
+
+### Actualizar proyecto
+
+## Renombrar archivos de extensión .html a .php:   
+index.html  --> index.php   
+nosotros.html  --> nosotros.php   
+anuncios.html  --> anuncios.php   
+anuncio.html  --> anuncio.php   
+blog.html  --> blog.php   
+entrada.html  --> entrada.php   
+contacto.html  --> contacto.php   
+base.html  --> base.php   
+
+## Ejecutar:
+ren *.html *.php
+
+
+## Ejecutar:
+http://localhost/DAW_P-06_bienesRaicesPHP/index.php
+
+
+## Agregar:
+.gitattributes

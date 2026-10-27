@@ -1,0 +1,21 @@
+# Normalizar todos los archivos de texto para que Git gestione los saltos de línea automáticamente
+* text=auto
+
+# Archivos de código y configuración: forzar LF en el repositorio
+*.js text eol=lf
+*.ts text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.txt text eol=lf
+
+# Archivos binarios (imágenes, fuentes, compilados) para que Git nunca los toque
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.exe binary
