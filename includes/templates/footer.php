@@ -6,9 +6,7 @@
                 <a href="blog.php">Blog</a>
                 <a href="contacto.php">Contacto</a>
             </nav>
-        </div>
-
-        
+        </div>       
 
         <p class="copyright">Todos los derechos Reservados <?php echo date('Y'); ?> &copy;</p>
     </footer>
