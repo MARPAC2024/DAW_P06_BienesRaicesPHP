@@ -55,3 +55,7 @@ http://localhost/DAW_P-06_bienesRaicesPHP/index.php
 
 ## Agregar:
 .gitattributes
+
+
+## Instalar
+npm install --save-dev gulp-postcss autoprefixer
