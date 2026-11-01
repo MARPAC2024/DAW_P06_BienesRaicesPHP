@@ -16,3 +16,7 @@ desktop.ini
 .vscode/
 .idea/
 
+# Imágenes subidas por usuarios en el CRUD
+/imagenes/*
+!/imagenes/.gitkeep
+

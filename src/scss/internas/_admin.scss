@@ -22,17 +22,19 @@ table.propiedades {
 
     thead {
         background-color: $verde;
-    }
-
-    th {
-        color: $blanco;
-        padding: 2rem;
+        th {
+            color: $blanco;
+            padding: 2rem;
+        }
     }
 
     .imagen-tabla {
-        width: 10rem;
-    }
-    
+        width: 12rem;
+        max-height: 10rem;    /* Evita que imágenes verticales deformen la fila */
+        object-fit: cover;    /* Recorta proporcionalmente */
+        display: block;
+        margin: 0 auto;
+    }    
 }
 
 .imagen-small {

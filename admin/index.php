@@ -1,4 +1,9 @@
 <?php 
+
+    // Incluye template
+    require '../includes/funciones.php';
+    incluirTemplate('header');
+    
 /*
     echo "<pro>";
     var_dump($_GET);
@@ -47,10 +52,6 @@
             }
         }
     }
-
-    // Incluye template
-    require '../includes/funciones.php';
-    incluirTemplate('header');
 ?>
 
 <main class="contenedor seccion">
@@ -100,7 +101,7 @@
     </table>
 </main>
 
-<?php 
+<?php
     // Cerrar la conexión
     mysqli_close($db);
 

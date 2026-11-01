@@ -5,41 +5,128 @@
 }
 
 .anuncio {
-    background-color: lighten($gris, 5);
-    border: 1px solid darken($gris, 10);
+    background-color: lighten($gris, 5%);
+    border: 1px solid darken($gris, 10%);
     margin-bottom: 2rem;
+    overflow: hidden; /* Evita que los hijos desborden la tarjeta */
+    width: 100%;
+    
+    /* Convierte la tarjeta en contenedor flexible vertical */
+    display: flex;
+    flex-direction: column;
 
+    picture {
+        display: block;
+        width: 100%;        
+        background-color: $blanco; /* Fondo para rellenar los costados si la imagen no es panorámica */
+        overflow: hidden;
+
+        /* Asegura que la imagen nunca supere el ancho de su tarjeta */
+        img {
+            width: 100%;
+            height: 25rem;
+            object-fit: cover; /* Mantiene la proporción sin deformar la foto */
+            display: block;
+            object-fit: contain; /* Muestra la imagen COMPLETA sin recortar bordes */
+            display: block;
+        }
+    }
+
+    
     .contenido-anuncio {
         padding: 2rem;
+        
+        /* Hace que el contenido ocupe el alto disponible */
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        h3, p {
+            margin: 0;
+            /* Fuerza a romper palabras largas artificiales */
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
     }
 
-    h3, p {
-        margin: 0;
+    .precio {
+        color: $verde;
+        font-weight: $bold;
+        font-size: 3rem;
+        margin: 2rem 0;
     }
- 
+
+    /* Empuja el botón 'Ver Propiedad' hasta la parte inferior */
+    .boton-amarillo-block {
+        margin-top: auto;
+    }
+     
 }
-.precio {
-    color: $verde;
-    font-weight: $bold;
-    font-size: 3rem;
-}
+
+
 
 .iconos-caracteristicas {
     display: flex;
     list-style: none;
     padding: 0;
+    margin: 2rem 0;
     max-width: 40rem;
+    align-items: center; /* Alinea verticalmente icono y número */
 
     li {
         flex: 1;
         display: flex;
-
+        align-items: center; /* Centra verticalmente el ícono con el número */
+        
         img {
-            flex:  0 0 3rem;
+            flex: 0 0 3rem;
+            width: 3rem;       /* Ancho fijo forzado */
+            max-width: 3rem;   /* Evita que crezca */
+            height: 3rem;      /* Alto fijo forzado */
             margin-right: 1rem;
+            display: inline-block;
         }
+        
         p {
             font-weight: $black;
+            margin: 0;
+        }
+    }
+}
+
+
+/* VISTA INDIVIDUAL DEL ANUNCIO */
+.contenido-centrado {
+    picture {
+        display: flex;             /* Centra la imagen horizontalmente */
+        justify-content: center;
+        width: 100%;
+        background-color: $blanco; /* Fondo para rellenar los costados si la imagen no es panorámica */
+        overflow: hidden;
+
+        img {
+            max-width: 100%;
+            height: 35rem;         /* Altura controlada */
+            object-fit: contain;   /* Muestra la imagen ENTERA sin cortar nada */
+            display: block;
+        }
+    }
+
+    .resumen-propiedad {
+        margin-top: 2rem;
+
+        .precio {
+            color: $verde;
+            font-size: 3rem;
+            font-weight: $bold;
+            margin: 1.5rem 0;
+        }
+
+        p {
+            word-break: break-all;
+            overflow-wrap: anywhere;
+            line-height: 1.8;
+            color: $blanco;
         }
     }
 }
