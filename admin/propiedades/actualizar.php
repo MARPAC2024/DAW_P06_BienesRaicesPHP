@@ -27,7 +27,7 @@
     $db = conectarDB();
 
     // Obtener los datos de la propiedad
-    $consultaDatos = "SELECT * FROM propiedades WHERE id = ${id}";
+    $consultaDatos = "SELECT * FROM propiedades WHERE id = {$id}";
     //echo $consultaDatos;
 
     $resultadoDatos = mysqli_query($db, $consultaDatos);
@@ -121,7 +121,7 @@
             }
 
             // Actualizar en la base de datos
-            $query = "UPDATE propiedades SET titulo = '${titulo}', precio = '${precio}', imagen = '${nombreImagen}', descripcion = '${descripcion}', habitaciones = ${habitaciones}, wc = ${wc}, estacionamiento = ${estacionamiento}, vendedorId = ${vendedorId} WHERE id = ${id}";
+            $query = "UPDATE propiedades SET titulo = '{$titulo}', precio = '{$precio}', imagen = '{$nombreImagen}', descripcion = '{$descripcion}', habitaciones = {$habitaciones}, wc = {$wc}, estacionamiento = {$estacionamiento}, vendedorId = {$vendedorId} WHERE id = {$id}";
             //echo $query;
 
             $resultado = mysqli_query($db, $query);

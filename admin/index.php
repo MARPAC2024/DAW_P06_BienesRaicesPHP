@@ -34,7 +34,7 @@
 
         if($id) {
             // Eliminar el archivo de la imagen
-            $queryImagen = "SELECT imagen FROM propiedades WHERE id = ${id}";
+            $queryImagen = "SELECT imagen FROM propiedades WHERE id = {$id}";
             $resultadoImagen = mysqli_query($db, $queryImagen);
             $propiedad = mysqli_fetch_assoc($resultadoImagen);
 
