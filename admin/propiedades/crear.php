@@ -113,6 +113,12 @@
     }
 
 ?>
+<style>
+    .propiedades th, 
+    .propiedades td {
+        color: #ffffff;
+    }
+</style>
 
     <main class="contenedor seccion">
         <h1>Crear Propiedad</h1>
