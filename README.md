@@ -21,7 +21,7 @@ cd DAW_P06_BienesRaicesPHP
 
 ## Dependencias de Node.js (Gulp y SASS)
 npm install
-npx gulp
+npx gulp   ##########------------------------------ Ejecutar
 
 ## Generar   .gitignore
 
@@ -59,3 +59,4 @@ http://localhost/DAW_P-06_bienesRaicesPHP/index.php
 
 ## Instalar
 npm install --save-dev gulp-postcss autoprefixer
+

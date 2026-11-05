@@ -43,7 +43,7 @@
 
         h3, p {
             margin: 0;
-            /* Fuerza a romper palabras largas artificiales */
+            /* Fuerza a romper palabras largas */
             overflow-wrap: break-word;
             word-break: break-word;
         }
