@@ -16,7 +16,7 @@
 
             <div class="anuncio">
                 <picture>
-                    <img loading="lazy" src="<?php echo BASE_URL; ?>/imagenes/<?php echo $propiedad['imagen']; ?>" alt="anuncio">
+                    <img loading="lazy" src="<?php echo url('/imagenes/' . $propiedad['imagen']); ?>" alt="anuncio">
                 </picture>
 
                 <div class="contenido-anuncio">
@@ -26,20 +26,20 @@
 
                     <ul class="iconos-caracteristicas">
                         <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
+                            <img class="icono" loading="lazy" src="<?php echo url('/build/img/icono_wc.svg'); ?>" alt="icono wc">
                             <p><?php echo $propiedad['wc']; ?></p>
                         </li>
                         <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="icono estacionamiento">
+                            <img class="icono" loading="lazy" src="<?php echo url('/build/img/icono_estacionamiento.svg'); ?>" alt="icono estacionamiento">
                             <p><?php echo $propiedad['estacionamiento']; ?></p>
                         </li>
                         <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="icono habitaciones">
+                            <img class="icono" loading="lazy" src="<?php echo url('/build/img/icono_dormitorio.svg'); ?>" alt="icono habitaciones">
                             <p><?php echo $propiedad['habitaciones']; ?></p>
                         </li>
                     </ul>
 
-                    <a href="anuncio.php?id=<?php echo $propiedad['id']; ?>" class="boton-amarillo-block">
+                    <a href="<?php echo url('/anuncio.php?id=' . $propiedad['id']); ?>" class="boton-amarillo-block">Ver Propiedad</a>
                         Ver Propiedad
                     </a>
                 </div><!--.contenido-anuncio-->

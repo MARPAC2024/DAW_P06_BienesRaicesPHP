@@ -123,7 +123,7 @@
     <main class="contenedor seccion">
         <h1>Crear Propiedad</h1>
 
-        <a href="<?php echo BASE_URL; ?>/admin" class="boton boton-verde">Volver</a>
+        <a href="<?php echo url('/admin/index.php'); ?>" class="boton boton-verde">Volver</a>
 
         <?php foreach($errores as $error): ?>
             <div class="alerta error">
@@ -131,7 +131,7 @@
             </div>
         <?php endforeach; ?>
 
-        <form class="formulario" method="POST" action="<?php echo BASE_URL; ?>/admin/propiedades/crear.php" enctype="multipart/form-data">
+        <form class="formulario" method="POST" action="<?php echo url('/admin/propiedades/crear.php'); ?>" enctype="multipart/form-data">
             <fieldset>
                 <legend>Información General</legend>
 

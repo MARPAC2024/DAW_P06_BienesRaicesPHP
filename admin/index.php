@@ -65,7 +65,7 @@
         <p class="alerta exito">Anuncio Eliminado Correctamente</p>
     <?php endif; ?>
 
-    <a href="<?php echo BASE_URL; ?>/admin/propiedades/crear.php" class="boton boton-verde">Nueva Propiedad</a>
+    <a href="<?php echo url('/admin/propiedades/crear.php'); ?>" class="boton boton-verde">Nueva Propiedad</a>
 
     <table class="propiedades">
         <thead>
@@ -78,13 +78,13 @@
             </tr>
         </thead>
 
-        <!-- Mostrar los resultados-->
+        <!-- Mostrar los resultados -->
         <tbody>
             <?php while($propiedad = mysqli_fetch_assoc($resultadoConsulta)): ?>
             <tr>
                 <td><?php echo $propiedad['id']; ?></td>
                 <td><?php echo $propiedad['titulo']; ?></td>
-                <td><img src="../imagenes/<?php echo $propiedad['imagen']; ?>" class="imagen-tabla" alt="Imagen"></td>
+                <td><img src="<?php echo url('/imagenes/' . $propiedad['imagen']); ?>" class="imagen-tabla" alt="Imagen"></td>
                 <td>$ <?php echo number_format($propiedad['precio']); ?></td>
                 <td>
                     <form method="POST" class="w-100">
@@ -92,7 +92,7 @@
                         
                         <input type="submit" class="boton-rojo-block" value="Eliminar">
                         
-                        <a href="<?php echo BASE_URL; ?>/admin/propiedades/actualizar.php?id=<?php echo $propiedad['id']; ?>" class="boton-amarillo-block">Actualizar</a>
+                        <a href="<?php echo url('/admin/propiedades/actualizar.php?id=' . $propiedad['id']); ?>" class="boton-amarillo-block">Actualizar</a>
                     </form>
                 </td>
             </tr>
