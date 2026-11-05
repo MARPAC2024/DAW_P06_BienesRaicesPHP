@@ -1,8 +1,9 @@
 <?php 
-
-    // Incluye template
+    // Incluir funciones
     require '../includes/funciones.php';
-    incluirTemplate('header');
+
+    // 1. Verificar autenticación antes de imprimir cualquier HTML
+    $auth = estaAutenticado();
     
 /*
     echo "<pro>";
@@ -11,8 +12,13 @@
     echo "</pro>";
     exit;
 */
+    
+    if(!$auth) { 
+        header('Location: ' . url('/index.php'));
+        exit;
+    }
 
-    // Conexión a la BD
+    // 2. Conexión a la BD
     require '../includes/config/database.php';
     $db = conectarDB();
 
@@ -25,8 +31,6 @@
     // Muestra mensaje condicional
     $resultado = $_GET['resultado'] ?? null;
 
-    $auth = estaAutenticado();
-
     // Eliminar registro
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
         $id = $_POST['id'];
@@ -38,20 +42,24 @@
             $resultadoImagen = mysqli_query($db, $queryImagen);
             $propiedad = mysqli_fetch_assoc($resultadoImagen);
 
-            if(file_exists('../imagenes/' . $propiedad['imagen'])) {
+            if($propiedad && file_exists('../imagenes/' . $propiedad['imagen'])) {
                 unlink('../imagenes/' . $propiedad['imagen']);
             }
 
             // Eliminar la propiedad
-            $queryEliminar = "DELETE FROM propiedades WHERE id = ${id}";
+            $queryEliminar = "DELETE FROM propiedades WHERE id = {$id}";
             $resultadoEliminar = mysqli_query($db, $queryEliminar);
 
             if($resultadoEliminar) {
                 //header('Location: /admin?resultado=3');
                 header('Location: ' . url('/admin/index.php?resultado=3'));
+                exit;
             }
         }
     }
+
+    // 3. Incluir template del header (DESPUÉS de las validaciones y redirecciones)
+    incluirTemplate('header');
 ?>
 
 <main class="contenedor seccion">

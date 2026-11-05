@@ -6,7 +6,16 @@ function incluirTemplate( string $nombre, bool $inicio = false ) {
     include TEMPLATES_URL . "/{$nombre}.php";}
 
 function estaAutenticado() : bool {
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    
+    /*
+    echo "<pre>";
+    var_dump($_SESSION);
+    echo "</pre>";
+    */
+
     $auth = $_SESSION['login'] ?? false;
     return $auth;
 }

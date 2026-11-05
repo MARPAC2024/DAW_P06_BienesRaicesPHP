@@ -1,8 +1,12 @@
 <?php 
-    require '../../includes/funciones.php';    
+    require '../../includes/funciones.php';
     incluirTemplate('header');
-    
+
     $auth = estaAutenticado();
+    
+    if(!$auth) { 
+        header('Location: /');
+    }
 
 /*
     echo "<pre>";

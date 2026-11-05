@@ -3,6 +3,10 @@
     incluirTemplate('header');
 
     $auth = estaAutenticado();
+    
+    if(!$auth) { 
+        header('Location: /');
+    }
 
     /*
         echo "<pre>";
