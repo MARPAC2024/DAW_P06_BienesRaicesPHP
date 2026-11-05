@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienes Raices</title>
+    
+    <!-- Estilos CSS -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/build/css/app.css">
 </head>
 <body>
@@ -31,10 +33,8 @@
                 
             </div> <!--.barra-->
 
-            <?php 
-                if($inicio) {
-                    echo "<h1>Venta de Casas y departamentos Exclusivos de Lujo</h1>";
-                }
-            ?>
+            <?php if ($inicio) { ?>
+                <h1>Venta de Casas y Departamentos Exclusivos de Lujo</h1>
+            <?php } ?>
         </div>
     </header>
