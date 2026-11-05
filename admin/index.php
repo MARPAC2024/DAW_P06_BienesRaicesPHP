@@ -48,7 +48,7 @@
 
             if($resultadoEliminar) {
                 //header('Location: /admin?resultado=3');
-                header('Location: ' . BASE_URL . '/admin?resultado=3');
+                header('Location: ' . url('/admin/index.php?resultado=3'));
             }
         }
     }
